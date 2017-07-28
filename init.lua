@@ -168,8 +168,8 @@ register_pie("pie", "Cake")
 minetest.register_craft({
 	output = "pie:pie_0",
 	recipe = {
-		{"farming:sugar", "mobs:bucket_milk", "farming:sugar"},
-		{"farming:sugar", "mobs:egg", "farming:sugar"},
+		{"food:sugar", "mobs:bucket_milk", "food:sugar"},
+		{"food:sugar", "mobs:egg", "food:sugar"},
 		{"farming:wheat", "farming:flour", "farming:wheat"},
 	},
 	replacements = {{ "mobs:bucket_milk", "bucket:bucket_empty"}}
@@ -181,38 +181,38 @@ register_pie("choc", "Chocolate Cake")
 minetest.register_craft({
 	output = "pie:choc_0",
 	recipe = {
-		{"farming:cocoa_beans", "mobs:bucket_milk", "farming:cocoa_beans"},
-		{"farming:sugar", "mobs:egg", "farming:sugar"},
+		{"food:chocolate_powder", "mobs:bucket_milk", "food:chocolate_powder"},
+		{"food:sugar", "mobs:egg", "food:sugar"},
 		{"farming:wheat", "farming:flour", "farming:wheat"},
 	},
 	replacements = {{ "mobs:bucket_milk", "bucket:bucket_empty"}}
 })
 
 -- strawberry cheesecake
-register_pie("scsk", "Strawberry Cheesecake")
-
-minetest.register_craft({
-	output = "pie:scsk_0",
-	recipe = {
-		{"ethereal:strawberry", "mobs:bucket_milk", "ethereal:strawberry"},
-		{"farming:sugar", "mobs:egg", "farming:sugar"},
-		{"farming:wheat", "farming:flour", "farming:wheat"},
-	},
-	replacements = {{ "mobs:bucket_milk", "bucket:bucket_empty"}}
-})
-
+--register_pie("scsk", "Strawberry Cheesecake")
+--
+--minetest.register_craft({
+--	output = "pie:scsk_0",
+--	recipe = {
+--		{"ethereal:strawberry", "mobs:bucket_milk", "ethereal:strawberry"},
+--		{"farming:sugar", "mobs:egg", "farming:sugar"},
+--		{"farming:wheat", "farming:flour", "farming:wheat"},
+--	},
+--	replacements = {{ "mobs:bucket_milk", "bucket:bucket_empty"}}
+--})
+--cant make it on MMS
 -- coffee cake
-register_pie("coff", "Coffee Cake")
-
-minetest.register_craft({
-	output = "pie:coff_0",
-	recipe = {
-		{"farming:coffee_beans", "mobs:bucket_milk", "farming:coffee_beans"},
-		{"farming:sugar", "mobs:egg", "farming:sugar"},
-		{"farming:wheat", "farming:flour", "farming:wheat"},
-	},
-	replacements = {{ "mobs:bucket_milk", "bucket:bucket_empty"}}
-})
+--register_pie("coff", "Coffee Cake")
+--
+--minetest.register_craft({
+--	output = "pie:coff_0",
+--	recipe = {
+--		{"farming:coffee_beans", "mobs:bucket_milk", "farming:coffee_beans"},
+--		{"farming:sugar", "mobs:egg", "farming:sugar"},
+--		{"farming:wheat", "farming:flour", "farming:wheat"},
+--	},
+--	replacements = {{ "mobs:bucket_milk", "bucket:bucket_empty"}}
+--})
 
 -- red velvet cake
 register_pie("rvel", "Red Velvet Cake")
@@ -220,8 +220,8 @@ register_pie("rvel", "Red Velvet Cake")
 minetest.register_craft({
 	output = "pie:rvel_0",
 	recipe = {
-		{"farming:cocoa_beans", "mobs:bucket_milk", "dye:red"},
-		{"farming:sugar", "mobs:egg", "farming:sugar"},
+		{"food:chocolate_powder", "mobs:bucket_milk", "dye:red"},
+		{"food:sugar", "mobs:egg", "food:sugar"},
 		{"farming:flour", "mobs:cheese", "farming:flour"},
 	},
 	replacements = {{ "mobs:bucket_milk", "bucket:bucket_empty"}}
@@ -238,19 +238,61 @@ minetest.register_craft({
 		{"", "", ""}
 	},
 })
-
+--cant make it on MMS
 -- banana cake
-register_pie("bana", "Banana Cake")
+--register_pie("bana", "Banana Cake")
+--
+--minetest.register_craft({
+--	output = "pie:bana_0",
+--	recipe = {
+--		{"ethereal:banana", "mobs:bucket_milk", "ethereal:banana"},
+--		{"farming:sugar", "mobs:egg", "farming:sugar"},
+--		{"farming:wheat", "farming:flour", "farming:wheat"},
+--	},
+--	replacements = {{ "mobs:bucket_milk", "bucket:bucket_empty"}}
+--})
+
+--My pies for MMS
+
+--orange pie
+register_pie("orange","Orange Pie")
 
 minetest.register_craft({
-	output = "pie:bana_0",
+	output = "pie:orange_0",
 	recipe = {
-		{"ethereal:banana", "mobs:bucket_milk", "ethereal:banana"},
-		{"farming:sugar", "mobs:egg", "farming:sugar"},
+		{"food:orange", "mobs:bucket_milk", "food:orange"},
+		{"food:sugar", "mobs:egg", "food:sugar"},
 		{"farming:wheat", "farming:flour", "farming:wheat"},
 	},
 	replacements = {{ "mobs:bucket_milk", "bucket:bucket_empty"}}
 })
+
+--apple pie
+register_pie("apple","Apple Pie")
+
+minetest.register_craft({
+	output = "pie:apple_0",
+	recipe = {
+		{"default:apple", "mobs:bucket_milk", "default:apple"},
+		{"food:sugar", "mobs:egg", "food:sugar"},
+		{"farming:wheat", "farming:flour", "farming:wheat"},
+	},
+	replacements = {{ "mobs:bucket_milk", "bucket:bucket_empty"}}
+})
+
+--bread pudding
+register_pie("brpd","Bread Pudding")
+
+minetest.register_craft({
+	output = "pie:brpd_0",
+	recipe = {
+		{"farming:bread", "mobs:bucket_milk", "farming:bread"},
+		{"food:sugar", "mobs:egg", "food:sugar"},
+		{"farming:wheat", "farming:flour", "farming:wheat"},
+	},
+	replacements = {{ "mobs:bucket_milk", "bucket:bucket_empty"}}
+})
+
 
 -- add lucky blocks
 
@@ -258,11 +300,11 @@ if minetest.get_modpath("lucky_block") then
 lucky_block:add_blocks({
 	{"nod", "pie:pie_0", 0},
 	{"nod", "pie:choc_0", 0},
-	{"nod", "pie:coff_0", 0},
+	{"nod", "pie:orange_0", 0},
 	{"tro", "pie:pie_0"},
 	{"nod", "pie:rvel_0", 0},
-	{"nod", "pie:scsk_0", 0},
-	{"nod", "pie:bana_0", 0},
+	{"nod", "pie:orange_0", 0},
+	{"nod", "pie:brpd_0", 0},
 	{"nod", "pie:meat_0", 0},
 	{"lig"},
 })
